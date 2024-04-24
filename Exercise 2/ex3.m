@@ -21,7 +21,14 @@ good_filter = filter_object();
 
 yf = filtfilt(good_filter.Numerator, 1, yw);
 
-figure;
-plot(yf);
-
 fvtool(good_filter, Fs = Fs);
+
+%% Ερώτημα δ.
+figure;
+plot(yf(40000:40250));
+
+figure;
+noise_signal = yw-yf;
+plot(noise_signal(40000:40250));
+
+
